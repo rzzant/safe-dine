@@ -33,7 +33,7 @@ function MenuPage() {
 
   // Fetch menu items from backend
   useEffect(() => {
-    fetch("/api/menu")
+fetch(`${import.meta.env.VITE_API_URL}/menu`)
       .then((res) => {
         if (!res.ok) throw new Error(`Server error: ${res.status}`);
         return res.json();
