@@ -1,11 +1,13 @@
 # SafeDine — Allergy-Aware Dining System
 
+## Live Demo
+https://safe-dine-lovat.vercel.app/
+
 ## Overview
 
 SafeDine is a full-stack web application that helps users identify safe food options based on their allergies. It provides a color-coded menu system and a simulated QR-based restaurant flow.
 
-## Live Demo
-https://safe-dine-lovat.vercel.app/
+
 
 Demo Flow:
 1. Select allergies
