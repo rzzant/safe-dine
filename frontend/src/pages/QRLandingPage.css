@@ -1,0 +1,229 @@
+.qr-page {
+  padding: 32px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== EXPLAINER ===== */
+.qr-explainer__steps {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.qr-step {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.qr-step__num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  color: var(--dark-brown);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.qr-step__text {
+  font-size: 0.88rem;
+  color: var(--medium-brown);
+  line-height: 1.5;
+}
+
+/* ===== SCANNER CARD ===== */
+.qr-scanner-card__title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.qr-scanner-card__sub {
+  font-size: 0.87rem;
+  color: var(--medium-brown);
+  margin-bottom: 24px;
+}
+
+/* ===== RESTAURANT GRID ===== */
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.restaurant-btn {
+  background: var(--warm-white);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.restaurant-btn:hover:not(:disabled) {
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.restaurant-btn--active {
+  border-color: var(--safe-green-border);
+  background: var(--safe-green-bg);
+}
+
+.restaurant-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.restaurant-btn__emoji {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.restaurant-btn__name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--charcoal);
+}
+
+.restaurant-btn__cuisine {
+  font-size: 0.75rem;
+  color: var(--medium-brown);
+}
+
+.restaurant-btn__table {
+  font-size: 0.72rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ===== SCANNING ANIMATION ===== */
+.qr-scanning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  color: var(--medium-brown);
+  font-size: 0.9rem;
+}
+
+.qr-frame {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  background: rgba(212, 168, 83, 0.05);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.qr-scan-line {
+  width: 100%;
+  height: 2px;
+  background: var(--accent-gold);
+  box-shadow: 0 0 8px var(--accent-gold);
+  position: absolute;
+  top: 0;
+  animation: scan 1.5s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0%   { top: 0; }
+  50%  { top: calc(100% - 2px); }
+  100% { top: 0; }
+}
+
+.qr-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+.qr-corner--tl { top: 4px; left: 4px; border-top: 2px solid var(--accent-gold); border-left: 2px solid var(--accent-gold); }
+.qr-corner--tr { top: 4px; right: 4px; border-top: 2px solid var(--accent-gold); border-right: 2px solid var(--accent-gold); }
+.qr-corner--bl { bottom: 4px; left: 4px; border-bottom: 2px solid var(--accent-gold); border-left: 2px solid var(--accent-gold); }
+.qr-corner--br { bottom: 4px; right: 4px; border-bottom: 2px solid var(--accent-gold); border-right: 2px solid var(--accent-gold); }
+
+/* ===== SCAN RESULT ===== */
+.qr-result {
+  background: var(--safe-green-bg);
+  border: 1.5px solid var(--safe-green-border);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeIn 0.3s ease;
+}
+
+.qr-result__icon {
+  font-size: 1.8rem;
+}
+
+.qr-result__info {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--safe-green);
+  min-width: 140px;
+}
+
+.qr-result__info span {
+  color: var(--medium-brown);
+  font-size: 0.82rem;
+}
+
+/* ===== FAKE QR ===== */
+.qr-code-display {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.qr-code-display h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  color: var(--charcoal);
+}
+
+.qr-code-display p {
+  font-size: 0.85rem;
+  color: var(--medium-brown);
+  max-width: 400px;
+}
+
+.fake-qr {
+  background: white;
+  padding: 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+  display: inline-block;
+}
+
+.fake-qr-label {
+  font-size: 0.75rem !important;
+  color: var(--light-brown) !important;
+  font-weight: 500;
+}

@@ -1,0 +1,78 @@
+.allergy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.allergy-card {
+  position: relative;
+  background: var(--warm-white);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 20px 16px 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  font-family: "DM Sans", sans-serif;
+}
+
+.allergy-card:hover {
+  border-color: var(--light-brown);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.allergy-card--selected {
+  border-color: var(--unsafe-red);
+  background: var(--unsafe-red-bg);
+  box-shadow: 0 0 0 1px var(--unsafe-red);
+}
+
+.allergy-card--selected:hover {
+  border-color: var(--unsafe-red);
+}
+
+.allergy-card__check {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--unsafe-red);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.allergy-card--selected .allergy-card__check {
+  opacity: 1;
+}
+
+.allergy-card__emoji {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.allergy-card__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+
+.allergy-card__desc {
+  font-size: 0.72rem;
+  color: var(--medium-brown);
+  line-height: 1.3;
+}
+
+.allergy-card--selected .allergy-card__label {
+  color: var(--unsafe-red);
+}
